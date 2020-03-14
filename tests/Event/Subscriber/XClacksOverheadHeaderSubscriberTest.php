@@ -4,6 +4,7 @@ namespace MNocon\GnuTerryPratchett\Tests\Event\Subscriber;
 
 use DG\BypassFinals;
 use MNocon\GnuTerryPratchettBundle\Event\Subscriber\XClacksOverheadHeaderSubscriber;
+use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,20 +23,16 @@ class XClacksOverheadHeaderSubscriberTest extends TestCase
         $this->subscriber = new XClacksOverheadHeaderSubscriber();
     }
 
-    public function testImplementsEventSubsscriberInterface(): void
-    {
-        $this->assertInstanceOf(EventSubscriberInterface::class, $this->subscriber);
-    }
-
     public function testSubsribesToOnKernelResponse(): void
     {
         $subscribedEvents = XClacksOverheadHeaderSubscriber::getSubscribedEvents();
 
-        $this->assertArrayHasKey(
+        Assert::assertArrayHasKey(
         KernelEvents::RESPONSE,
             $subscribedEvents
         );
-        $this->assertContains('addHeader', $subscribedEvents[KernelEvents::RESPONSE]);
+        // HACK for: https://github.com/phpstan/phpstan/issues/3072
+        Assert::assertEquals('addHeader', $subscribedEvents[KernelEvents::RESPONSE][0]);
     }
 
     public function testAddsXClacksOverheadHeader(): void
@@ -47,6 +44,6 @@ class XClacksOverheadHeaderSubscriberTest extends TestCase
         $responseEvent->method('getResponse')->willReturn($responseMock);
 
         $this->subscriber->addHeader($responseEvent);
-        $this->assertContains('GNU Terry Pratchett', $responseEvent->getResponse()->headers->all('X-Clacks-Overhead'));
+        Assert::assertContains('GNU Terry Pratchett', $responseEvent->getResponse()->headers->all('X-Clacks-Overhead'));
     }
 }
