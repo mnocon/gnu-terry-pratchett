@@ -4,8 +4,8 @@ tests:
 - Behat - done?
 - PHPCS
 - PHPStan
-- PHPUnit
-- Symfony dependency injection tests
+- PHPUnit - done
+- Symfony dependency injection tests - done
 - visual testing
 
 CI:
