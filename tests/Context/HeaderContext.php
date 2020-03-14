@@ -9,6 +9,10 @@ class HeaderContext extends MinkContext
 {
     /**
      * @Then I can see a server header
+     *
+     * @param TableNode $table
+     *
+     * @throws \Behat\Mink\Exception\ExpectationException
      */
     public function iCanSeeAServerHeader(TableNode $table): void
     {

@@ -22,7 +22,7 @@ class GnuTerryPratchettExtensionTest extends AbstractExtensionTestCase
         ];
     }
 
-    public function test_after_loading_subsriber_exists()
+    public function test_after_loading_subsriber_exists(): void
     {
         $this->load();
 

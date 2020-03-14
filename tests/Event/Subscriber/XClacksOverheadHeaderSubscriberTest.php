@@ -22,12 +22,12 @@ class XClacksOverheadHeaderSubscriberTest extends TestCase
         $this->subscriber = new XClacksOverheadHeaderSubscriber();
     }
 
-    public function testImplementsEventSubsscriberInterface()
+    public function testImplementsEventSubsscriberInterface(): void
     {
         $this->assertInstanceOf(EventSubscriberInterface::class, $this->subscriber);
     }
 
-    public function testSubsribesToOnKernelResponse()
+    public function testSubsribesToOnKernelResponse(): void
     {
         $subscribedEvents = XClacksOverheadHeaderSubscriber::getSubscribedEvents();
 
@@ -38,7 +38,7 @@ class XClacksOverheadHeaderSubscriberTest extends TestCase
         $this->assertContains('addHeader', $subscribedEvents[KernelEvents::RESPONSE]);
     }
 
-    public function testAddsXClacksOverheadHeader()
+    public function testAddsXClacksOverheadHeader(): void
     {
         $responseHeaderBag = new ResponseHeaderBag();
         $responseMock = $this->getMockBuilder(Response::class)->disableOriginalConstructor()->getMock();

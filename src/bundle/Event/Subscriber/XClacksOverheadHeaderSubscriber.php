@@ -15,7 +15,7 @@ final class XClacksOverheadHeaderSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function addHeader(ResponseEvent $event)
+    public function addHeader(ResponseEvent $event): void
     {
         $event->getResponse()->headers->set('X-Clacks-Overhead', 'GNU Terry Pratchett');
     }

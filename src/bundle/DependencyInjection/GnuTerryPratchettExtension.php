@@ -15,7 +15,7 @@ class GnuTerryPratchettExtension extends Extension
      * @param array $config
      * @param ContainerBuilder $container
      */
-    public function load(array $config, ContainerBuilder $container)
+    public function load(array $config, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
             $container,
