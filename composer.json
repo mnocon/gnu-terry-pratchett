@@ -2,7 +2,7 @@
     "name": "mnocon/gnu-terry-pratchett",
     "description": "Add X-Clacks-Overhead \"GNU Terry Pratchett\" to your website headers",
     "type": "library",
-    "license": "MIT License",
+    "license": "MIT",
     "authors": [
         {
             "name": "Marek Nocoń",
