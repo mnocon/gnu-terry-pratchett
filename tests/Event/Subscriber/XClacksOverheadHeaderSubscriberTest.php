@@ -6,7 +6,6 @@ use DG\BypassFinals;
 use MNocon\GnuTerryPratchettBundle\Event\Subscriber\XClacksOverheadHeaderSubscriber;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
