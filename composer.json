@@ -44,6 +44,9 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
-        "fix-cs": "@php ./bin/php-cs-fixer fix -v --show-progress=estimating"
+        "fix-cs": "@php ./bin/php-cs-fixer fix -v --show-progress=estimating",
+        "unit-tests": "bin/phpunit",
+        "bdd": "bin/behat",
+        "phpstan": "bin/phpstan analyse src Tests --level=0"
     }
 }
