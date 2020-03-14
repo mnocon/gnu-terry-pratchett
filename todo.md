@@ -11,5 +11,7 @@ tests:
 CI:
 - Docker app with Symfony Demo - done
 - Docker: install my bundle
-- Travis
+- Travis:
+    - yaml inheritance
+    - multiple install/script commands
 - Github Actions
