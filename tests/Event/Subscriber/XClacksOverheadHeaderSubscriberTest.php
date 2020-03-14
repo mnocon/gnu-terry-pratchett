@@ -1,12 +1,9 @@
 <?php
 
-
 namespace MNocon\GnuTerryPratchett\Tests\Event\Subscriber;
-
 
 use DG\BypassFinals;
 use MNocon\GnuTerryPratchettBundle\Event\Subscriber\XClacksOverheadHeaderSubscriber;
-use PHPUnit\Framework\MockObject\MockBuilder;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;

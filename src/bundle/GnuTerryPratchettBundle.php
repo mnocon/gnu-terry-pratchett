@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MNocon\GnuTerryPratchettBundle;
-
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

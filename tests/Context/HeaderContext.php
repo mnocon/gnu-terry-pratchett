@@ -3,7 +3,6 @@
 namespace MNocon\GnuTerryPratchett\Tests\Context;
 
 use Behat\Gherkin\Node\TableNode;
-use Behat\Mink\WebAssert;
 use Behat\MinkExtension\Context\MinkContext;
 
 class HeaderContext extends MinkContext

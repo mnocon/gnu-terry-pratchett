@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MNocon\GnuTerryPratchett\Tests\DependencyInjection;
-
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use MNocon\GnuTerryPratchettBundle\DependencyInjection\GnuTerryPratchettExtension;
@@ -11,7 +9,6 @@ use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
 class GnuTerryPratchettExtensionTest extends AbstractExtensionTestCase
 {
-
     /**
      * Return an array of container extensions you need to be registered for each test (usually just the container
      * extension you are testing.

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MNocon\GnuTerryPratchettBundle\DependencyInjection;
-
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -11,7 +9,6 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class GnuTerryPratchettExtension extends Extension
 {
-
     /**
      * Loads a specific configuration.
      *
