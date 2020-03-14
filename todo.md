@@ -1,14 +1,15 @@
 TODO:
 
 tests:
-- Behat - done?
+- Behat - done
 - PHPCS - done
-- PHPStan
+- PHPStan - done
 - PHPUnit - done
 - Symfony dependency injection tests - done
 - visual testing
 
 CI:
-- Docker app with Symfony Demo
+- Docker app with Symfony Demo - done
+- Docker: install my bundle
 - Travis
 - Github Actions

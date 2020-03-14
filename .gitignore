@@ -2,6 +2,7 @@
 composer.lock
 symfony.lock
 /bin/
+/symfony-demo/
 
 ###> symfony/framework-bundle ###
 /.env.local
