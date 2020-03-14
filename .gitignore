@@ -1,4 +1,7 @@
 /vendor/
+composer.lock
+symfony.lock
+/bin/
 
 ###> symfony/framework-bundle ###
 /.env.local

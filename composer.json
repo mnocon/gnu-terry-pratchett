@@ -23,6 +23,21 @@
         "phpunit/phpunit": "^9",
         "phpstan/phpstan": "^0.12.14"
     },
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-4": {
+            "MNocon\\GnuTerryPratchettBundle\\": "src/bundle/",
+            "Mnocon\\GnuTerryPratchett\\": "src/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MNocon\\GnuTerryPratchett\\Tests\\": "Tests/"
+        }
+    },
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",

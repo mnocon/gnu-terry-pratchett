@@ -13,4 +13,5 @@ default:
         default:
             paths:
                 - '%paths.base%/features'
-            contexts: []
+            contexts:
+                - MNocon\GnuTerryPratchett\Tests\Context\HeaderContext

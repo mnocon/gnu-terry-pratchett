@@ -1,11 +1,12 @@
 TODO:
 
 tests:
-- Behat
+- Behat - done?
 - PHPCS
 - PHPStan
 - PHPUnit
 - Symfony dependency injection tests
+- visual testing
 
 CI:
 - Travis
