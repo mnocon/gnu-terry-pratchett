@@ -1,0 +1,16 @@
+default:
+    calls:
+        error_reporting: -1
+    formatters:
+        pretty: true
+    extensions:
+        Behat\MinkExtension:
+            base_url: 'http://127.0.0.1:8000'
+            sessions:
+                default:
+                     goutte: ~
+    suites:
+        default:
+            paths:
+                - '%paths.base%/features'
+            contexts: []
