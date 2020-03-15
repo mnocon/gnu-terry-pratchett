@@ -1,0 +1,85 @@
+language: php
+
+services:
+  - docker
+
+php:
+- 7.2
+
+git:
+  depth: 3
+  quiet: true
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+branches:
+  only:
+  - master
+
+env:
+    global:
+      - COMPOSER_MEMORY_LIMIT=-1
+
+jobs:
+  include:
+  - name: Code style
+    install: composer install
+    script: ./bin/php-cs-fixer fix -v --dry-run --show-progress=estimating
+  - name: PHPStan
+    install: composer install
+    script: composer run phpstan
+  - name: Unit Tests
+    install: composer install
+    script: composer run unit-tests
+  - name: Dependency security check
+    install: composer install
+    script: composer run security
+  - name: "Integration test on PHP 7.1 and Symfony 4"
+    php: 7.1
+    env: PHP_IMAGE=ezsystems/php:7.1-v1 DEMO_VERSION=~1.4.0
+    install: 
+      - composer install
+      - docker-compose up -d
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+  - name: "Integration test on PHP 7.2 and Symfony 4"
+    php: 7.2
+    env: PHP_IMAGE=ezsystems/php:7.2-v1 DEMO_VERSION=~1.4.0
+    install: 
+      - composer install
+      - docker-compose up -d
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+    script: bin/behat
+  - name: "Integration test on PHP 7.2 and Symfony 5"
+    php: 7.2
+    env: PHP_IMAGE=ezsystems/php:7.2-v1 DEMO_VERSION=~1.5.0
+    install: 
+      - composer install
+      - docker-compose up -d;
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+    script: bin/behat
+  - name: "Integration test on PHP 7.3 and Symfony 4"
+    php: 7.3
+    env: PHP_IMAGE=ezsystems/php:7.3-v1 DEMO_VERSION=~1.4.0
+    install: 
+      - composer install
+      - docker-compose up -d
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+    script: bin/behat
+  - name: "Integration test on PHP 7.3 and Symfony 5"
+    php: 7.3
+    env: PHP_IMAGE=ezsystems/php:7.3-v1 DEMO_VERSION=~1.5.0
+    install: 
+      - composer install
+      - docker-compose up -d;
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+    script: bin/behat
+  - name: "Integration test on PHP 7.4 and Symfony 5"
+    php: 7.4
+    env: PHP_IMAGE=ezsystems/php:7.4-v1 DEMO_VERSION=~1.5.0
+    install: 
+      - composer install
+      - docker-compose up -d;
+      - while [ "`docker inspect -f {{.State.Health.Status}} app`" != "healthy" ]; do docker logs app; sleep 2; done
+    script: bin/behat

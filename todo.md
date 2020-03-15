@@ -1,17 +1,14 @@
 TODO:
 
 tests:
-- Behat - done
-- PHPCS - done
-- PHPStan - done
-- PHPUnit - done
-- Symfony dependency injection tests - done
 - visual testing
+- Sauce Labs - https://saucelabs.com/solutions/open-source
+- headless Chrome https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-the-chrome-addon-in-the-headless-mode
+- headless Firefox
+- phantomjs
 
 CI:
-- Docker app with Symfony Demo - done
-- Docker: install my bundle
-- Travis:
-    - yaml inheritance
-    - multiple install/script commands
 - Github Actions
+
+other:
+- add Readme
